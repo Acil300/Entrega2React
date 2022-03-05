@@ -2,7 +2,7 @@
 import './App.css';
 import axios from "axios"
 import { useState, useEffect } from "react";
-import clima from './assets/img/clima.png'
+
 
 function App() {
   const[cardClima, setCardClima]=useState("");
