@@ -33,8 +33,8 @@ function App() {
         .then((res) => setCardClima(res.data));
     };
      navigator?.geolocation?.getCurrentPosition(sucess);
-     console.log(cardClima);
-},[""]);
+
+},[]);
 
   return (
     <div className="App">
