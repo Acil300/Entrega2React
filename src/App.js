@@ -71,7 +71,7 @@ function App() {
             <span className="temp-view">{isClick ? "°C" : "°F"}</span>
           </h2>
           <button onClick={handleClick}>
-            {isClick ? "TEMPERATURA °C" : "TEMPERATURA F"}
+            {isClick ? "TEMPERATURE °C" : "TEMPERATURE °F"}
           </button>
         </div>
       </div>

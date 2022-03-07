@@ -98,7 +98,7 @@ button {
 .App-link {
   color: #61dafb;
 }
-@media screen and (max-width:1700px){
+@media screen and (max-width:1900px){
   .container-card{
     background-color: transparent;
     box-shadow: 4px 5px 19px 10px rgb(0 0 0 / 20%);
@@ -137,3 +137,4 @@ button {
     margin-top: 100px;
   }
 }
+
