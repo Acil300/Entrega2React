@@ -1,23 +1,18 @@
+*{
+  box-sizing: border-box;
+}
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.card-time {
+body{
   background-image:url(https://picsum.photos/id/733/2000/2000?blur=3);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+.card-time {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -120,7 +115,7 @@ button {
     margin-top: 100px;
   }
   .card-time {
-  background-image:url(https://picsum.photos/id/733/2000/2000?blur=3);
+
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

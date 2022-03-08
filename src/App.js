@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 
 
 function App() {
-  const[cardClima, setCardClima]=useState("");
+  const [cardClima, setCardClima] = useState("");
   const [isClick, setIsClick] = useState(true);
 
   const handleClick = () => {
@@ -19,12 +19,9 @@ function App() {
     return Math.floor(((temp - 273.15) * 9) / 5 + 32);
   };
   useEffect(() => {
-
-
     const sucess = (position) => {
       const lat = position.coords?.latitude;
       const lon = position.coords?.longitude;
-
 
       axios
         .get(
@@ -32,9 +29,24 @@ function App() {
         )
         .then((res) => setCardClima(res.data));
     };
-     navigator?.geolocation?.getCurrentPosition(sucess);
+    navigator?.geolocation?.getCurrentPosition(sucess);
+  }, []);
 
-},[]);
+  if (cardClima?.weather?.[0]?.main === "Drizzle") {
+  document.body.style.backgroundImage = `url(https://i.giphy.com/media/xT9GEOg09OuResnZ6g/giphy.gif)`;
+} else if (cardClima?.weather?.[0]?.main === "Rain") {
+  document.body.style.backgroundImage = `url(https://64.media.tumblr.com/475f62ccd3ff499105a79ac8b67711e2/6025a433cd47175f-a3/s540x810/54d94f3aacbb8ceddb42ecf8df32f0db7c493d9f.gifv)`;
+} else if (cardClima?.weather?.[0]?.main === "Snow") {
+  document.body.style.backgroundImage = `url(https://c.tenor.com/h7udV_fxDUoAAAAC/snowing-snow.gif)`;
+} else if (cardClima?.weather?.[0]?.main === "Thunderstorm") {
+  document.body.style.backgroundImage = `url(https://static.onecms.io/wp-content/uploads/sites/35/2017/08/03220738/fb-thunderstorm-asthma.gif)`;
+} else if (cardClima?.weather?.[0]?.main === "Clouds") {
+  document.body.style.backgroundImage = `url(https://i.picsum.photos/id/1064/4236/2819.jpg?hmac=YygzDG22SIIGfbbuoV45bKoBIUguEtto0Jw_YdPDGyY)`;
+} else if (cardClima?.weather?.[0]?.main === "Clear") {
+  document.body.style.backgroundImage = `url(https://picsum.photos/id/733/200/300)`;
+}else {
+  document.body.style.backgroundImage = `url(http://www.spyghana.com/wp-content/uploads/2014/11/sunny-day.jpg)`;
+}
 
   return (
     <div className="App">
